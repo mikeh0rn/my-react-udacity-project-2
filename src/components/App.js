@@ -9,7 +9,7 @@ import LoggedInUser from './LoggedInUser'
 import QuestionDetails from './QuestionDetails'
 import Nav from './Nav'
 import Leaderboard from './Leaderboard'
-import LoadingBar from 'react-redux-loading'
+import LoadingBar from 'react-redux-loading-bar'
 
 class App extends Component {
   componentDidMount() {
