@@ -35,11 +35,11 @@ class QuestionDetails extends Component {
             <p>Option A: {question.optionOne.text}</p>
             <p>Total Votes: {question.optionOne.votes.length} people voted for this option.
              Pecentage: {calcPercentage(question, question.optionOne)}
-             {selectedByAuthedUser(authedUser, question.optionOne)}</p>
+             {selectedByAuthedUser(authedUser, question.optionOne) && 'This is your selection!'}</p>
             <p>Option B: {question.optionTwo.text}</p>
             <p>{question.optionTwo.votes.length} people voted for this question,
              That are {calcPercentage(question, question.optionTwo)} Percent!
-             {selectedByAuthedUser(authedUser, question.optionTwo)}</p>
+             {selectedByAuthedUser(authedUser, question.optionTwo) && 'This is your selection!'}</p>
           </div>)
           : (<div>
             <img src={avatar} className='avatar' />
