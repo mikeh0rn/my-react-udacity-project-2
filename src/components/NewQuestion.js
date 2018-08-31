@@ -41,6 +41,12 @@ class NewQuestion extends Component {
 
 
   render() {
+
+    const { authedUser } = this.props
+    if (authedUser === null) {
+      return <Redirect to='/login' />
+    }
+
     const { optionOneText, optionTwoText, submit } = this.state
     if (submit) {
       return <Redirect to='/' />
