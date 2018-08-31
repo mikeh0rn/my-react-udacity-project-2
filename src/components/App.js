@@ -9,7 +9,6 @@ import LoggedInUser from './LoggedInUser'
 import QuestionDetails from './QuestionDetails'
 import Nav from './Nav'
 import Leaderboard from './Leaderboard'
-import LoadingBar from 'react-redux-loading-bar'
 
 class App extends Component {
   componentDidMount() {
@@ -21,7 +20,7 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
-          <LoadingBar />
+
           <div>
             {this.props.loading === true
               ? null
@@ -48,7 +47,6 @@ class App extends Component {
 
 function mapStateToProps ({ users, questions,authedUser }) {
   return {
-    // loading: authedUser === null
     loading: Object.keys(users).length === 0 || Object.keys(questions).length === 0,
     authedUser
   }
