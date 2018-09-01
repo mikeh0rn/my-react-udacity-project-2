@@ -18,13 +18,17 @@ class QuestionDetails extends Component {
   }
 
   render() {
-    const { authedUser, question, users } = this.props
+    const { authedUser, question, users, location } = this.props
     if (question === null) {
       return <p>404 error!!</p>
     }
 
     if (authedUser === null) {
-      return <Redirect to='/login' />
+      // return <Redirect to='/login' />
+      return <Redirect to={{
+        pathname: "/login",
+        state: { from: location.pathname }
+      }} />
     }
     const avatar = getAvatar(question, users)
 

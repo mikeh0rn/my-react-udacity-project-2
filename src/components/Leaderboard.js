@@ -8,11 +8,14 @@ class Leaderboard extends Component {
 
 
   render() {
-    const { users, userIds, authedUser, questions } = this.props
+    const { users, userIds, authedUser, questions, location } = this.props
 
     if (authedUser === null) {
-      console.log("null authedUser user - redirect to login")
-      return <Redirect to='/login' />
+      // return <Redirect to='/login' />
+      return <Redirect to={{
+        pathname: "/login",
+        state: { from: location.pathname }
+      }} />
     }
 
 

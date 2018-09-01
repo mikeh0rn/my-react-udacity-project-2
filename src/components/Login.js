@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
 import { Link, withRouter } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -15,8 +16,10 @@ class Login extends Component {
   render() {
     const { users, userIds, authedUser } = this.props
 
+    const { from } = this.props.location.state || { from: "/" };
+
     if(authedUser !== null){
-      this.props.history.push('/')
+      return <Redirect to={from} />;
     }
 
     return (
