@@ -10,6 +10,7 @@ import QuestionDetails from './QuestionDetails'
 import Nav from './Nav'
 import Leaderboard from './Leaderboard'
 
+const Oops = () => <p>404 Error: This poll does not exist!</p>
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
@@ -35,6 +36,7 @@ class App extends Component {
                   <Route path='/questions/:id' exact component={QuestionDetails} />
                   <Route path='/add' exact component={NewQuestion} />
                   <Route path='/leaderboard' exact component={Leaderboard} />
+                  <Route path="/error" component={Oops} />
                 </div>
               </div>
             }

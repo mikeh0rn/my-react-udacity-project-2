@@ -30,11 +30,11 @@ class Login extends Component {
           {userIds.map((id) => (
             <li key={id}>
             <div className='login' onClick={(e) => this.handleSetAuthedUser(e, id)}>
-              <Link to={`/`} ><img src={users[id].avatarURL} className='avatar' />
+              <img src={users[id].avatarURL} className='avatar' />
                 <div >
                   {users[id].name}
                 </div>
-              </Link>
+              
               </div>
             </li>
           ))}
